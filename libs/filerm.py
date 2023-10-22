@@ -83,6 +83,10 @@ class filerm:
             return str(round(memory.total / 1024.0 **2)) + " MB"
         elif size == "gb":
             return str(round(memory.total / 1024.0 **3)) + " GB"
+        
+    def CurrentRam():
+        memory = psutil.virtual_memory()
+        return str(round(memory.active / 1024.0 **2)) + " MB"
     
     def ReadDisk():
         disk = psutil.disk_usage("/")

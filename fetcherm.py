@@ -12,6 +12,7 @@ def fetcherm():
     printWithBold(TYLW, f"Theme: {TWHT}{filerm.getOS('gnome-theme')}")
 
     printWithBold(TYLW, f"CPU: {TWHT}{filerm.ReadCPU()}")
-    printWithBold(TYLW, f"GPU: {TWHT}{filerm.ReadGPU()}\n")
+    printWithBold(TYLW, f"GPU: {TWHT}{filerm.ReadGPU()}")
+    printWithBold(TYLW, f"Memory: {TWHT}{filerm.CurrentRam() + ' / ' + filerm.ReadMemory('mb')}\n")
 
 fetcherm()

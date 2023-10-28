@@ -13,6 +13,7 @@ def fetcherm():
 
     printWithBold(TYLW, f"CPU: {TWHT}{filerm.ReadCPU()}")
     printWithBold(TYLW, f"GPU: {TWHT}{filerm.ReadGPU()}")
-    printWithBold(TYLW, f"Memory: {TWHT}{filerm.CurrentRam() + ' / ' + filerm.ReadMemory('mb')}\n")
-
+    printWithBold(TYLW, f"Memory: {TWHT}{filerm.CurrentRam() + ' / ' + filerm.ReadMemory('mb')}")
+    printWithBold(TYLW, f"Disk size: {TWHT}{filerm.ReadDisk()}\n")
+    
 fetcherm()

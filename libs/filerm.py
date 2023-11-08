@@ -21,12 +21,10 @@ class filerm:
             data = subprocess.check_output(command, shell=True).decode().strip()
             return data
         elif prp == "shell":
-            command = "echo ${BASH_VERSION}"
-            data = subprocess.check_output(command, shell=True).decode().strip()
-            for line in data.split("\n"):
-                if "release" in line:
-                    version = re.sub('()-release*.', "", line, 1)
-            return os.environ["SHELL"] + " " + version
+            shell = "echo ${SHELL}"
+            sh_data = subprocess.check_output(shell, shell=True).decode().strip()
+            return os.environ["SHELL"]
+                
         
         elif prp == "desktop-env":
             if de_data == "GNOME": 
@@ -42,11 +40,20 @@ class filerm:
             wm_data = subprocess.check_output(wm, shell=True).decode().strip()
             return wm_data
 
+
+    def ReadTheme():
+        ## DESKTOP ENVIRONMENT
+        de = "echo ${XDG_CURRENT_DESKTOP}"
+        de_data = subprocess.check_output(de, shell=True).decode().strip()
+        ##
         if de_data == "GNOME": 
-            if prp == "gnome-theme":
-                command = "gsettings get org.gnome.desktop.interface gtk-theme" 
-                theme_data = subprocess.check_output(command, shell=True).decode().strip() 
-                return theme_data.replace("'", "")
+            command = "gsettings get org.gnome.desktop.interface gtk-theme" 
+            theme_data = subprocess.check_output(command, shell=True).decode().strip() 
+            return theme_data.replace("'", "")
+        elif de_data == "X-Cinnamon":
+            command = "gsettings get org.cinnamon.theme name" 
+            theme_data = subprocess.check_output(command, shell=True).decode().strip() 
+            return theme_data.replace("'", "")
         else:
             pass #TODO
 

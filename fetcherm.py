@@ -9,7 +9,7 @@ def fetcherm():
     printWithBold(TYLW, f"Shell: {TWHT}{filerm.getOS('shell')}")
     printWithBold(TYLW, f"DE: {TWHT}{filerm.getOS('desktop-env')}")
     printWithBold(TYLW, f"WM: {TWHT}{filerm.getOS('window-mngr').capitalize()}")
-    printWithBold(TYLW, f"Theme: {TWHT}{filerm.getOS('gnome-theme')}")
+    printWithBold(TYLW, f"Theme: {TWHT}{filerm.ReadTheme()}")
 
     printWithBold(TYLW, f"CPU: {TWHT}{filerm.ReadCPU()}")
     printWithBold(TYLW, f"GPU: {TWHT}{filerm.ReadGPU()}")

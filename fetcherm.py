@@ -3,8 +3,13 @@ from libs.color import *
 
 def fetcherm():
     printlnWithBold(TGRN, "\nWelcome to Fetcherm")
-    
-    printWithBold(TYLW, f"OS:  {TWHT}{filerm.getOS('os-name')}")
+
+    hostUser = f"{TGRN}{BOLD}[{TLGN}{BOLD}{filerm.user}{TRED}{BOLD}@{TLBL}{BOLD}{filerm.host}{TGRN}{BOLD}]{TNRM}"
+    print(hostUser)
+    for i in range(len(f"[{filerm.user}@{filerm.host}]")):
+        print("-", end='')
+
+    printWithBold(TYLW, f"\nOS:  {TWHT}{filerm.getOS('os-name')}")
     printWithBold(TYLW, f"Kernel: {TWHT}{filerm.getOS('kernel')}")
     printWithBold(TYLW, f"Shell: {TWHT}{filerm.getOS('shell')}")
     printWithBold(TYLW, f"DE: {TWHT}{filerm.getOS('desktop-env')}")

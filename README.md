@@ -14,4 +14,4 @@ python fetcherm.py
 
 #### OR
 
-You will be able to run it integratedly on the [Term](https://github.com/furyex2dev/term)
+You can now run fetcherm on [Term](https://github.com/furyex2dev/term) by default
